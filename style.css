@@ -1,4 +1,88 @@
-/* Galeria - obras uma abaixo da outra */
+/* ---------------- RESET E FONTE ---------------- */
+body, html, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fdfdfd;
+    line-height: 1.6;
+}
+
+/* ---------------- INDEX.HTML - SELEÇÃO DE IDIOMA ---------------- */
+.container.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* altura total da tela */
+}
+
+.buttons .btn {
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 20px;
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.buttons .btn:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* ---------------- CABEÇALHO ---------------- */
+header {
+    background: #222;
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* permite quebra em telas pequenas */
+}
+
+.home-btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    background: #ff6b6b;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.home-btn:hover {
+    background: #ff4757;
+}
+
+/* ---------------- SOBRE ---------------- */
+.sobre {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ---------------- GALERIA ---------------- */
+.galeria {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
 .galeria .grid {
     display: flex;
     flex-direction: column; /* obras em coluna */
@@ -7,8 +91,8 @@
 }
 
 .obra img {
-    width: 90%;       /* largura ajustável */
-    max-width: 400px; /* não fica enorme */
+    width: 90%;
+    max-width: 400px;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s;
@@ -18,7 +102,7 @@
     transform: scale(1.05);
 }
 
-/* Lightbox centralizado */
+/* ---------------- LIGHTBOX ---------------- */
 #lightbox {
     display: none;
     position: fixed;
@@ -32,7 +116,6 @@
     flex-direction: column;
     cursor: pointer;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 #lightbox-img {
@@ -50,13 +133,62 @@
     max-width: 90%;
 }
 
-/* Responsivo */
+/* ---------------- RODAPÉ ---------------- */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
 @media screen and (max-width: 768px) {
+    .container.center {
+        height: 80vh;
+    }
+
+    .buttons .btn {
+        padding: 15px 30px;
+        font-size: 16px;
+        margin: 15px 10px;
+    }
+
+    .header-container h1 {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .home-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sobre {
+        padding: 15px;
+    }
+
     .obra img {
         width: 95%;
     }
-    
+
     #lightbox-caption {
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buttons .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .container.center {
+        height: 70vh;
+    }
+
+    .obra img {
+        width: 100%;
     }
 }

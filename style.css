@@ -1,180 +1,62 @@
-/* Fonte e reset básico */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-}
-
-body {
-    background: #fdfdfd;
-    line-height: 1.6;
-}
-
-/* Cabeçalho */
-header {
-    background: #222;
-    color: #fff;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Permite quebra em telas pequenas */
-}
-
-.home-btn {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    background: #ff6b6b;
-    border-radius: 5px;
-    margin-top: 10px; /* Dá espaço em telas pequenas */
-}
-
-.home-btn:hover {
-    background: #ff4757;
-}
-
-/* Container central */
-.container.center {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.buttons .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    margin: 15px;
-    background: #333;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.buttons .btn:hover {
-    background: #555;
-    transform: scale(1.05);
-}
-
-/* Sobre */
-.sobre {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Galeria */
-.galeria {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
+/* Galeria - obras uma abaixo da outra */
 .galeria .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: column; /* obras em coluna */
+    align-items: center;
     gap: 20px;
 }
 
-.obra {
-    position: relative;
-    overflow: hidden;
+.obra img {
+    width: 90%;       /* largura ajustável */
+    max-width: 400px; /* não fica enorme */
     border-radius: 10px;
     cursor: pointer;
-}
-
-.obra img {
-    width: 100%;
-    display: block;
     transition: transform 0.3s;
 }
 
-.obra:hover img {
-    transform: scale(1.1);
+.obra img:hover {
+    transform: scale(1.05);
 }
 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
+/* Lightbox centralizado */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
     width: 100%;
-    text-align: center;
-    padding: 10px;
-    opacity: 0;
-    transition: 0.3s;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.obra:hover .overlay {
-    opacity: 1;
+#lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
-/* Rodapé */
-footer {
-    background: #222;
+#lightbox-caption {
     color: #fff;
+    font-size: 16px;
     text-align: center;
-    padding: 15px;
+    max-width: 90%;
 }
 
-/* --------------------- MEDIA QUERIES PARA CELULAR --------------------- */
+/* Responsivo */
 @media screen and (max-width: 768px) {
-    .container.center {
-        padding: 50px 10px;
+    .obra img {
+        width: 95%;
     }
-
-    .buttons .btn {
-        padding: 12px 20px;
-        margin: 10px 5px;
+    
+    #lightbox-caption {
         font-size: 14px;
-    }
-
-    .header-container h1 {
-        font-size: 20px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .home-btn {
-        margin-top: 10px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .sobre {
-        padding: 15px;
-    }
-
-    .galeria .grid {
-        grid-template-columns: 1fr; /* 1 coluna para celular */
-        gap: 15px;
-    }
-
-    .overlay p {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .container.center h1 {
-        font-size: 24px;
-    }
-
-    .container.center p {
-        font-size: 16px;
-    }
-
-    .buttons .btn {
-        padding: 10px 15px;
-        font-size: 13px;
     }
 }

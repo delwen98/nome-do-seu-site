@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Obras</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <a href="index.html">🏠 Início</a>
-    <h1>Minhas Obras</h1>
+    <div class="header-container">
+        <h1>Meu Portfolio</h1>
+        <a href="index.html" class="home-btn">🏠 Início</a>
+    </div>
 </header>
 
 <section class="sobre">
     <h2>Sobre</h2>
-    <p>Sou um(a) artista apaixonado(a) por retratar emoções e cores em minhas obras...</p>
+    <p>Sou um(a) artista apaixonado(a) por retratar emoções e cores em minhas obras. Cada quadro carrega uma história única.</p>
 </section>
 
 <section class="galeria">
     <h2>Galeria</h2>
     <div class="grid">
-        <div>
+        <div class="obra">
             <img src="imagens/obra1.jpg" alt="Obra 1">
-            <p>Título da Obra 1 – Acrílico sobre tela</p>
+            <div class="overlay">
+                <p>Título da Obra 1 – Acrílico sobre tela</p>
+            </div>
         </div>
-        <div>
+        <div class="obra">
             <img src="imagens/obra2.jpg" alt="Obra 2">
-            <p>Título da Obra 2 – Óleo sobre tela</p>
+            <div class="overlay">
+                <p>Título da Obra 2 – Óleo sobre tela</p>
+            </div>
         </div>
     </div>
 </section>

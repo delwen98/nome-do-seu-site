@@ -1,48 +1,45 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    color: #333;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Obras</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <h1>Meu Portfolio</h1>
+        <a href="index.html" class="home-btn">🏠 Início</a>
+    </div>
+</header>
 
-header, footer {
-    background: #eee;
-    padding: 10px;
-    text-align: center;
-}
+<section class="sobre">
+    <h2>Sobre</h2>
+    <p>Sou um(a) artista apaixonado(a) por retratar emoções e cores em minhas obras. Cada quadro carrega uma história única.</p>
+</section>
 
-.container.center {
-    text-align: center;
-    padding: 50px;
-}
+<section class="galeria">
+    <h2>Galeria</h2>
+    <div class="grid">
+        <div class="obra">
+            <img src="imagens/obra1.jpg" alt="Obra 1">
+            <div class="overlay">
+                <p>Título da Obra 1 – Acrílico sobre tela</p>
+            </div>
+        </div>
+        <div class="obra">
+            <img src="imagens/obra2.jpg" alt="Obra 2">
+            <div class="overlay">
+                <p>Título da Obra 2 – Óleo sobre tela</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-h1, h2 {
-    margin-top: 20px;
-}
-
-.buttons .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    background: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.buttons .btn:hover {
-    background: #555;
-}
-
-.galeria .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.galeria img {
-    width: 100%;
-    border-radius: 5px;
-}
+<footer>
+    <p>Contato: email@exemplo.com</p>
+</footer>
+</body>
+</html>

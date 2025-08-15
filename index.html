@@ -1,20 +1,34 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Arte - Escolha o Idioma</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container center">
-        <h1>Bem-vindo / Welcome</h1>
-        <p>Selecione seu idioma / Select your language</p>
-        <div class="buttons">
-            <a href="pt.html" class="btn">🇧🇷 Português</a>
-            <a href="en.html" class="btn">🇺🇸 English</a>
+<section class="galeria">
+    <h2>Galeria</h2>
+    <div class="grid">
+        <div class="obra">
+            <img src="imagens/obra1.jpg" alt="Título da Obra 1" onclick="openLightbox(this.src, this.alt)">
         </div>
+        <div class="obra">
+            <img src="imagens/obra2.jpg" alt="Título da Obra 2" onclick="openLightbox(this.src, this.alt)">
+        </div>
+        <div class="obra">
+            <img src="imagens/obra3.jpg" alt="Título da Obra 3" onclick="openLightbox(this.src, this.alt)">
+        </div>
+        <!-- Adicione mais obras aqui -->
     </div>
-</body>
-</html>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+</div>
+
+<script>
+function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').innerText = alt;
+    lb.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>

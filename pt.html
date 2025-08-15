@@ -10,36 +10,53 @@
 <body>
 <header>
     <div class="header-container">
-        <h1>Meu Portfolio</h1>
+        <h1>Meu Portfólio</h1>
         <a href="index.html" class="home-btn">🏠 Início</a>
     </div>
 </header>
 
 <section class="sobre">
     <h2>Sobre</h2>
-    <p>Sou um(a) artista apaixonado(a) por retratar emoções e cores em minhas obras. Cada quadro carrega uma história única.</p>
+    <p>Sou um(a) artista apaixonado(a) por retratar emoções e cores em minhas obras. Cada quadro conta uma história única.</p>
 </section>
 
 <section class="galeria">
     <h2>Galeria</h2>
     <div class="grid">
         <div class="obra">
-            <img src="imagens/obra1.jpg" alt="Obra 1">
-            <div class="overlay">
-                <p>Título da Obra 1 – Acrílico sobre tela</p>
-            </div>
+            <img src="imagens/obra1.jpg" alt="Título da Obra 1" onclick="openLightbox(this.src, this.alt)">
         </div>
         <div class="obra">
-            <img src="imagens/obra2.jpg" alt="Obra 2">
-            <div class="overlay">
-                <p>Título da Obra 2 – Óleo sobre tela</p>
-            </div>
+            <img src="imagens/obra2.jpg" alt="Título da Obra 2" onclick="openLightbox(this.src, this.alt)">
         </div>
+        <div class="obra">
+            <img src="imagens/obra3.jpg" alt="Título da Obra 3" onclick="openLightbox(this.src, this.alt)">
+        </div>
+        <!-- Adicione mais obras aqui -->
     </div>
 </section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+</div>
 
 <footer>
     <p>Contato: email@exemplo.com</p>
 </footer>
+
+<script>
+function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').innerText = alt;
+    lb.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 </body>
 </html>
